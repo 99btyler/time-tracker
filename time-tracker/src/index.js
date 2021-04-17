@@ -1,7 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
+import TimeTracker from "./TimeTracker"
+
 ReactDOM.render(
-    <h1>Hello, world!</h1>,
+    <TimeTracker />,
     document.getElementById("root")
 );
