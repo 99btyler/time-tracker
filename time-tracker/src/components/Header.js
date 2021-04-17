@@ -4,7 +4,9 @@ function Header() {
 
     return (
 
-        <h1>Time Tracker</h1>
+        <header>
+            <h1>Time Tracker</h1>
+        </header>
 
     );
 
