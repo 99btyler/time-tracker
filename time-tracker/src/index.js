@@ -8,4 +8,4 @@ import "./index.css"
 ReactDOM.render(
     <TimeTracker />,
     document.getElementById("root")
-);
+)

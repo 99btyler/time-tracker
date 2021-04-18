@@ -8,7 +8,7 @@ function Header() {
             <h1>Time Tracker</h1>
         </header>
 
-    );
+    )
 
 }
 
