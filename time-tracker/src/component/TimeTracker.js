@@ -1,7 +1,8 @@
 import React from "react"
 
-import Header from "./components/Header"
 import Footer from "./components/Footer"
+import Header from "./components/Header"
+import InputRow from "./components/InputRow"
 
 function TimeTracker() {
 
@@ -10,6 +11,11 @@ function TimeTracker() {
         <div>
 
             <Header />
+
+            <InputRow />
+            <InputRow />
+            <InputRow />
+            <InputRow />
 
             <Footer />
 
