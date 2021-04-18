@@ -1,0 +1,20 @@
+input {
+    padding: 5px;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+#input_description {
+    width: 70%;
+}
+
+#input_start_time, #input_end_time, #input_total_time {
+    width: 5%;
+}
+
+#input_total_time:hover {
+    cursor: default;
+}
