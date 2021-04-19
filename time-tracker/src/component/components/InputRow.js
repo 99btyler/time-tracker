@@ -1,6 +1,6 @@
 import React from "react"
 
-import "./InputRow.css"
+import "./style/InputRow.css"
 
 function InputRow() {
 
