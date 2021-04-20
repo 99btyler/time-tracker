@@ -10,7 +10,7 @@ function InputRow() {
             <input type="text" placeholder="description" id="input_description" />
             <input type="text" placeholder="start_time" id="input_start_time" />
             <input type="text" placeholder="end_time" id="input_end_time" />
-            <input type="text" value="total_time" readonly id="input_total_time" />
+            <input type="text" value="total_time" readOnly id="input_total_time" />
         </div>
 
     )
