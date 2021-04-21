@@ -7,14 +7,17 @@ import InputRow from "./components/InputRow"
 
 class TimeTracker extends React.Component {
 
-    render() {
+    constructor() {
 
-        const amountOfInputRows = 1
+        super()
 
-        const inputRows = [];
-        for (var i = 0; i < amountOfInputRows; i++) {
-            inputRows.push(<InputRow key={i} />)
+        this.state = {
+            inputRows: [<InputRow key="0" />]
         }
+
+    }
+
+    render() {
 
         return (
 
@@ -22,7 +25,7 @@ class TimeTracker extends React.Component {
 
                 <Header />
 
-                {inputRows}
+                {this.state.inputRows}
                 <AddButton />
 
                 <Footer />
