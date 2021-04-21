@@ -5,29 +5,32 @@ import Footer from "./components/Footer"
 import Header from "./components/Header"
 import InputRow from "./components/InputRow"
 
-function TimeTracker() {
+class TimeTracker extends React.Component {
 
-    const amountOfInputRows = 1
+    render() {
 
-    const inputRows = [];
-    for (var i = 0; i < amountOfInputRows; i++) {
-        inputRows.push(<InputRow key={i} />)
+        const amountOfInputRows = 1
+
+        const inputRows = [];
+        for (var i = 0; i < amountOfInputRows; i++) {
+            inputRows.push(<InputRow key={i} />)
+        }
+
+        return (
+
+            <div>
+
+                <Header />
+
+                {inputRows}
+                <AddButton />
+
+                <Footer />
+
+            </div>
+
+        )
     }
-
-    return (
-
-        <div>
-
-            <Header />
-
-            {inputRows}
-            <AddButton />
-
-            <Footer />
-
-        </div>
-
-    )
 
 }
 

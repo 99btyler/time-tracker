@@ -1,14 +1,16 @@
 import React from "react"
 
-function Header() {
+class Header extends React.Component {
 
-    return (
+    render() {
+        return (
 
-        <header>
-            <h1>Time Tracker</h1>
-        </header>
+            <header>
+                <h1>Time Tracker</h1>
+            </header>
 
-    )
+        )
+    }
 
 }
 

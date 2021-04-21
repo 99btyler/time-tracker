@@ -2,13 +2,15 @@ import React from "react"
 
 import "./style/AddButton.css"
 
-function AddButton() {
+class AddButton extends React.Component {
 
-    return (
+    render() {
+        return (
 
-        <button>+</button>
-
-    )
+            <button>+</button>
+            
+        )
+    }
 
 }
 
