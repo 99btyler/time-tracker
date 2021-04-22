@@ -15,24 +15,29 @@ class TimeTracker extends React.Component {
             inputRows: [<InputRow key="0" />]
         }
 
+        this.handleAddButtonClick = this.handleAddButtonClick.bind(this)
+
     }
 
     render() {
-
         return (
 
             <div>
-
                 <Header />
-
                 {this.state.inputRows}
-                <AddButton />
-
+                <button onClick={this.handleAddButtonClick}>+</button>
                 <Footer />
-
             </div>
 
         )
+    }
+
+    handleAddButtonClick() {
+
+        this.setState(oldState => ({
+            inputRows: [...oldState.inputRows, <InputRow key={oldState.inputRows.length} />]
+        }))
+
     }
 
 }
