@@ -1,20 +1,20 @@
-input {
+#input-description, #input-start-time, #input-end-time, #input-total-time {
     padding: 5px;
     text-align: center;
 }
 
-input:focus {
+#input-description:focus, #input-start-time:focus, #input-end-time:focus, #input-total-time:focus {
     outline: none;
 }
 
-#input_description {
+#input-description {
     width: 70%;
 }
 
-#input_start_time, #input_end_time, #input_total_time {
+#input-start-time, #input-end-time, #input-total-time {
     width: 5%;
 }
 
-#input_total_time:hover {
+#input-total-time:hover {
     cursor: default;
 }

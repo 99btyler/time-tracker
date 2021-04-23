@@ -7,7 +7,7 @@ class AddButton extends React.Component {
     render() {
         return (
 
-            <button onClick={this.props.handleAddButtonClick}>+</button>
+            <button id="button-add" onClick={this.props.handleAddButtonClick}>+</button>
             
         )
     }
