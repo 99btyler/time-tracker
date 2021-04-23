@@ -25,7 +25,7 @@ class TimeTracker extends React.Component {
             <div>
                 <Header />
                 {this.state.inputRows}
-                <button onClick={this.handleAddButtonClick}>+</button>
+                <AddButton handleAddButtonClick={this.handleAddButtonClick} />
                 <Footer />
             </div>
 
