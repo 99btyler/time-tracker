@@ -11,11 +11,12 @@ class TimeTracker extends React.Component {
 
         super()
 
-        this.state = {
-            inputRows: [<InputRow key="0" totalTime="totalTime" />]
-        }
-
+        this.handleTimePeriodChange = this.handleTimePeriodChange.bind(this)
         this.handleAddButtonClick = this.handleAddButtonClick.bind(this)
+
+        this.state = {
+            inputRows: []
+        }
 
     }
 
@@ -32,10 +33,16 @@ class TimeTracker extends React.Component {
         )
     }
 
+    handleTimePeriodChange(event, inputRowID) {
+
+        // ...
+
+    }
+
     handleAddButtonClick() {
 
         this.setState(oldState => ({
-            inputRows: [...oldState.inputRows, <InputRow key={oldState.inputRows.length} totalTime="totalTime" />]
+            inputRows: [...oldState.inputRows, <InputRow key={oldState.inputRows.length} inputRowID={oldState.inputRows.length} handleTimePeriodChange={this.handleTimePeriodChange} totalTime="totalTime" />]
         }))
 
     }

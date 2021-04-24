@@ -9,7 +9,7 @@ class InputRow extends React.Component {
 
             <form autoComplete="off">
                 <input id="input-description" type="text" placeholder="description" />
-                <input id="input-timePeriod" type="text" placeholder="timePeriod" />
+                <input id="input-timePeriod" type="text" placeholder="timePeriod" onChange={(event)=>this.props.handleTimePeriodChange(event, this.props.InputRowID)} />
                 <input id="input-totalTime" type="text" value={this.props.totalTime} readOnly />
             </form>
 
