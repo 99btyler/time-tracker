@@ -7,12 +7,11 @@ class InputRow extends React.Component {
     render() {
         return (
 
-            <div>
+            <form>
                 <input id="input-description" type="text" placeholder="description" />
-                <input id="input-start-time" type="text" placeholder="start_time" />
-                <input id="input-end-time" type="text" placeholder="end_time" />
-                <input id="input-total-time" type="text" value="total_time" readOnly />
-            </div>
+                <input id="input-timePeriod" type="text" placeholder="timePeriod" />
+                <input id="input-totalTime" type="text" value={this.props.totalTime} readOnly />
+            </form>
 
         )
     }

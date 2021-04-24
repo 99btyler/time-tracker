@@ -1,9 +1,9 @@
-#input-description, #input-start-time, #input-end-time, #input-total-time {
+#input-description, #input-timePeriod, #input-totalTime {
     padding: 5px;
     text-align: center;
 }
 
-#input-description:focus, #input-start-time:focus, #input-end-time:focus, #input-total-time:focus {
+#input-description:focus, #input-timePeriod:focus, #input-totalTime:focus {
     outline: none;
 }
 
@@ -11,10 +11,10 @@
     width: 70%;
 }
 
-#input-start-time, #input-end-time, #input-total-time {
-    width: 5%;
+#input-timePeriod, #input-totalTime {
+    width: 10%;
 }
 
-#input-total-time:hover {
+#input-totalTime:hover {
     cursor: default;
 }
