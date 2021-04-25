@@ -35,7 +35,23 @@ class TimeTracker extends React.Component {
 
     handleTimePeriodChange(event, inputRowID) {
 
-        // ...
+        const timePeriodValue = event.target.value
+
+        // Check if the timePeriod value is valid
+        const split = timePeriodValue.split(" to ")
+        if (split.length != 2) {
+            return
+        }
+
+        // Use it to calculate the totalTime value
+        const startTime = split[0]
+        const endTime = split[1]
+        const totalTime = endTime - startTime
+
+        // Update the appropriate InputRow using inputRowID
+        this.setState(oldState => ({
+            inputRows: oldState.inputRows.map(oldInputRow => oldInputRow.props.inputRowID == inputRowID ? <InputRow key={oldInputRow.props.key} inputRowID={oldInputRow.props.inputRowID} handleTimePeriodChange={this.handleTimePeriodChange} totalTime={totalTime} /> : oldInputRow)
+        }))
 
     }
 
