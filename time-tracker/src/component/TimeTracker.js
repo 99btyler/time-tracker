@@ -46,11 +46,11 @@ class TimeTracker extends React.Component {
         // Use it to calculate the totalTime value
         const startTime = split[0]
         const endTime = split[1]
-        const totalTime = endTime - startTime
+        const newTotalTime = endTime - startTime
 
         // Update the appropriate InputRow using inputRowID
         this.setState(oldState => ({
-            inputRows: oldState.inputRows.map(oldInputRow => oldInputRow.props.inputRowID == inputRowID ? <InputRow key={oldInputRow.props.key} inputRowID={oldInputRow.props.inputRowID} handleTimePeriodChange={this.handleTimePeriodChange} totalTime={totalTime} /> : oldInputRow)
+            inputRows: oldState.inputRows.map(oldInputRow => <InputRow key={oldInputRow.key} inputRowID={oldInputRow.props.inputRowID} handleTimePeriodChange={this.handleTimePeriodChange} totalTime={oldInputRow.props.inputRowID == inputRowID ? newTotalTime : oldInputRow.props.totalTime} />)
         }))
 
     }
@@ -58,7 +58,7 @@ class TimeTracker extends React.Component {
     handleAddButtonClick() {
 
         this.setState(oldState => ({
-            inputRows: [...oldState.inputRows, <InputRow key={oldState.inputRows.length} inputRowID={oldState.inputRows.length} handleTimePeriodChange={this.handleTimePeriodChange} totalTime="totalTime" />]
+            inputRows: [...oldState.inputRows, <InputRow key={oldState.inputRows.length} inputRowID={oldState.inputRows.length} handleTimePeriodChange={this.handleTimePeriodChange} totalTime="..." />]
         }))
 
     }
