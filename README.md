@@ -1,5 +1,5 @@
 # time-tracker
-...
+![noob-math-practicer gif](https://i.imgur.com/DNw4YIS.gif)
 
 # Getting Started
 Get this project set up locally
