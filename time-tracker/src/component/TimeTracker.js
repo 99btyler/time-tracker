@@ -40,7 +40,7 @@ class TimeTracker extends React.Component {
 
         // Check if the timePeriod values are valid
         const times = timePeriod.split("=>")
-        if (times.length != 2) {
+        if (times.length !== 2) {
             return
         }
 
@@ -52,7 +52,7 @@ class TimeTracker extends React.Component {
 
         // Update the appropriate InputRow using inputRowID
         this.setState(oldState => ({
-            inputRows: oldState.inputRows.map(oldInputRow => <InputRow key={oldInputRow.key} inputRowID={oldInputRow.props.inputRowID} handleTimePeriodChange={this.handleTimePeriodChange} totalTime={oldInputRow.props.inputRowID == inputRowID ? newTotalTime : oldInputRow.props.totalTime} />)
+            inputRows: oldState.inputRows.map(oldInputRow => <InputRow key={oldInputRow.key} inputRowID={oldInputRow.props.inputRowID} handleTimePeriodChange={this.handleTimePeriodChange} totalTime={oldInputRow.props.inputRowID === inputRowID ? newTotalTime : oldInputRow.props.totalTime} />)
         }))
 
     }
@@ -71,7 +71,7 @@ class TimeTracker extends React.Component {
 
         let totalMinutes = (parseInt(timeSplit[0]) * 60)
 
-        if (timeSplit.length == 2) {
+        if (timeSplit.length === 2) {
             totalMinutes += parseInt(timeSplit[1])
         }
 
