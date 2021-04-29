@@ -2,16 +2,12 @@ import React from "react"
 
 import "./style/AddButton.css"
 
-class AddButton extends React.Component {
+function AddButton(props) {
+    return (
 
-    render() {
-        return (
+        <button id="button-add" onClick={props.handleAddButtonClick}>+</button>
 
-            <button id="button-add" onClick={this.props.handleAddButtonClick}>+</button>
-            
-        )
-    }
-
+    )
 }
 
 export default AddButton
