@@ -27,7 +27,6 @@ class TimeTracker extends React.Component {
     handleTimePeriodChange = (event, inputRowID) => {
 
         const timePeriod = event.target.value
-        let newTotalTime = ""
 
         // Check if the timePeriod values are valid
         const times = timePeriod.split("=>")
@@ -38,8 +37,8 @@ class TimeTracker extends React.Component {
         const startTimeMinutes = this.getMinutesFromTime(times[0])
         const endTimeMinutes = this.getMinutesFromTime(times[1])
 
-        // Use them to calculate the totalTime value
-        newTotalTime = (endTimeMinutes - startTimeMinutes) + " minutes"
+        // Use them to calculate totalTime value
+        const newTotalTime = (endTimeMinutes - startTimeMinutes) + " minutes"
 
         // Update the appropriate InputRow using inputRowID
         this.setState(oldState => ({
