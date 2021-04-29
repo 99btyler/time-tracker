@@ -7,14 +7,8 @@ import InputRow from "./components/InputRow"
 
 class TimeTracker extends React.Component {
 
-    constructor() {
-
-        super()
-
-        this.state = {
-            inputRows: []
-        }
-
+    state = {
+        inputRows: []
     }
 
     render() {
