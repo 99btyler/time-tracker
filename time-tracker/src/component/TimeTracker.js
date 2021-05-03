@@ -1,9 +1,9 @@
 import React from "react"
 
-import AddButton from "./components/AddButton"
-import Footer from "./components/Footer"
-import Header from "./components/Header"
-import InputRow from "./components/InputRow"
+import AddButton from "./components/AddButton.js"
+import Footer from "./components/Footer.js"
+import Header from "./components/Header.js"
+import InputRow from "./components/InputRow.js"
 
 class TimeTracker extends React.Component {
 
