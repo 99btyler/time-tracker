@@ -1,8 +1,6 @@
-import React from "react"
-
 import "./style/AddButton.css"
 
-function AddButton(props) {
+const AddButton = (props) => {
     return (
 
         <button id="button-add" onClick={props.handleAddButtonClick}>+</button>

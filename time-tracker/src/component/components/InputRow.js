@@ -1,8 +1,6 @@
-import React from "react"
-
 import "./style/InputRow.css"
 
-function InputRow(props) {
+const InputRow = (props) => {
     return (
 
         <form autoComplete="off">
