@@ -13,5 +13,4 @@ const AddButton = ({ handleAddButtonClick }) => {
 AddButton.propTypes = {
     handleAddButtonClick: PropTypes.func.isRequired
 }
-
 export default AddButton

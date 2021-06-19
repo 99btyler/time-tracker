@@ -19,5 +19,4 @@ InputRow.propTypes = {
     handleTimePeriodChange: PropTypes.func.isRequired,
     totalTime: PropTypes.string.isRequired
 }
-
 export default InputRow
