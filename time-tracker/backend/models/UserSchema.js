@@ -14,6 +14,10 @@ const UserSchema = new Schema(
         timeRanges: {
             type: [String],
             required: true
+        },
+        totalTimes: {
+            type: [String],
+            required: true
         }
     }
 )

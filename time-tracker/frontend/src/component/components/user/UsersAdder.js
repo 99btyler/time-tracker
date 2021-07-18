@@ -39,7 +39,8 @@ class UsersAdder extends React.Component {
         const newUser = {
             username: this.state.username,
             descriptions: [""],
-            timeRanges: [""]
+            timeRanges: [""],
+            totalTimes: [""]
         }
 
         axios.post("http://localhost:5000/users/add", newUser).then(() => window.location = "/")
