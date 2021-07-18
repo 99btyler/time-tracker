@@ -31,7 +31,7 @@ class UsersEditor extends React.Component {
 
         const usersEditorInputRows = []
         for (var i = 0; i < this.state.descriptions.length; i++) {
-            usersEditorInputRows.push(<UsersEditorInputRow key={i} id={i} description={this.state.descriptions[i]} timeRange={this.state.timeRanges[i]} totalTime={this.state.totalTimes[i]} onChangeDescription={this.onChangeDescription} onChangeTimeRange={this.onChangeTimeRange} />)
+            usersEditorInputRows.push(<UsersEditorInputRow key={i} id={i} description={this.state.descriptions[i]} timeRange={this.state.timeRanges[i]} totalTime={this.state.totalTimes[i]} onChangeDescription={this.onChangeDescription} onChangeTimeRange={this.onChangeTimeRange} onClickButtonDeleteRow={this.onClickButtonDeleteRow} />)
         }
 
         return (
@@ -43,7 +43,7 @@ class UsersEditor extends React.Component {
                 <form onSubmit={this.onSubmitForm} autoComplete="off">
 
                     {usersEditorInputRows}
-                    <button onClick={this.onClickButtonAdd}>+</button>
+                    <button onClick={this.onClickButtonAddRow}>+</button>
                     
                     <input type="submit" value="SAVE EDIT" />
 
@@ -78,7 +78,28 @@ class UsersEditor extends React.Component {
 
     }
 
-    onClickButtonAdd = (event) => {
+    onClickButtonDeleteRow = (event, id) => {
+
+        event.preventDefault()
+
+        const descriptionsCopy = [...this.state.descriptions]
+        descriptionsCopy.splice(id, 1)
+
+        const timeRangesCopy = [...this.state.timeRanges]
+        timeRangesCopy.splice(id, 1)
+
+        const totalTimesCopy = [...this.state.totalTimes]
+        totalTimesCopy.splice(id, 1)
+
+        this.setState({
+            descriptions: descriptionsCopy,
+            timeRanges: timeRangesCopy,
+            totalTimes: totalTimesCopy
+        })
+
+    }
+
+    onClickButtonAddRow = (event) => {
 
         event.preventDefault()
 
