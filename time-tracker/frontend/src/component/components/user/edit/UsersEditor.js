@@ -51,6 +51,10 @@ class UsersEditor extends React.Component {
 
                 <p>success is not the result of doing an extraordinary thing once, but rather the result of doing unremarkable things many times over a long period of time</p>
 
+                <hr />
+
+                <button onClick={this.onClickButtonDeleteUser}>DELETE USER</button>
+
             </div>
 
         )
@@ -130,6 +134,16 @@ class UsersEditor extends React.Component {
         }
 
         axios.post("http://localhost:5000/users/edit/" + this.props.match.params.id, editedUser).then(() => window.location = "/")
+
+    }
+
+    onClickButtonDeleteUser = () => {
+
+        if (!window.confirm(`Are you sure? ${this.state.username}'s data will be erased.`)) {
+            return
+        }
+
+        axios.delete("http://localhost:5000/users/delete/" + this.props.match.params.id).then(() => window.location = "/")
 
     }
 
