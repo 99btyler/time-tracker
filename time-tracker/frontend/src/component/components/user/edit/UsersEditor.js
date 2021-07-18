@@ -72,8 +72,15 @@ class UsersEditor extends React.Component {
         const timeRangesCopy = [...this.state.timeRanges]
         timeRangesCopy[event.target.id] = event.target.value
 
+        const totalTimesCopy = [...this.state.totalTimes]
+        const times = event.target.value.split("=>")
+        if (times.length === 2) {
+            totalTimesCopy[event.target.id] = this.getDifferenceBetweenTimes(times[0], times[1])
+        }
+
         this.setState({
-            timeRanges: timeRangesCopy
+            timeRanges: timeRangesCopy,
+            totalTimes: totalTimesCopy
         })
 
     }
@@ -123,6 +130,24 @@ class UsersEditor extends React.Component {
         }
 
         axios.post("http://localhost:5000/users/edit/" + this.props.match.params.id, editedUser).then(() => window.location = "/")
+
+    }
+
+    getDifferenceBetweenTimes(startTime, endTime) {
+
+        const startTimeSplit = startTime.split(":")
+        let startTimeMinutes = parseInt(startTimeSplit[0]) * 60
+        if (startTimeSplit.length === 2) {
+            startTimeMinutes += parseInt(startTimeSplit[1])
+        }
+
+        const endTimeSplit = endTime.split(":")
+        let endTimeMinutes = parseInt(endTimeSplit[0]) * 60
+        if (endTimeSplit.length === 2) {
+            endTimeMinutes += parseInt(endTimeSplit[1])
+        }
+
+        return (endTimeMinutes - startTimeMinutes) + " minutes"
 
     }
 
