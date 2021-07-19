@@ -1,12 +1,18 @@
 import { Link } from 'react-router-dom';
 
+import "./Navigator.css"
+
 const Navigator = () => {
     return (
 
-        <ul>
-            <li><Link to="/">Get</Link></li>
-            <li><Link to="/add">Add</Link></li>
-        </ul>
+        <nav id="navigator">
+
+            <ul>
+                <li><Link className="link" to="/">Get</Link></li>
+                <li><Link className="link" to="/add">Add</Link></li>
+            </ul>
+
+        </nav>
 
     )
 }

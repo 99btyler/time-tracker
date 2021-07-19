@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#time-tracker {
+    width: 80%;
+    margin: auto;
+    background-color: #202020;
+    color: #ffffff;
+}
