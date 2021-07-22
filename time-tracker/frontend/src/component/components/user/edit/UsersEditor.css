@@ -1,0 +1,39 @@
+#users-editor {
+    padding: 20px;
+}
+
+#users-editor form {
+    margin: 20px 0;
+}
+
+#users-editor form input[type="text"] {
+    outline: none;
+}
+
+#users-editor form input[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #ffffff;
+}
+
+#users-editor input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #ebebeb;
+}
+
+#users-editor hr {
+    margin: 20px 0;
+}
+
+#users-editor #button-delete {
+    padding: 5px;
+    border: none;
+    background-color: #ff5555;
+    color: #ffffff;
+}
+
+#users-editor #button-delete:hover {
+    cursor: pointer;
+}

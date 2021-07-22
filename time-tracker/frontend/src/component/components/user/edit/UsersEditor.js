@@ -3,6 +3,8 @@ import axios from "axios"
 
 import UsersEditorInputRow from "./UsersEditorInputRow.js"
 
+import "./UsersEditor.css"
+
 class UsersEditor extends React.Component {
 
     state = {
@@ -36,7 +38,7 @@ class UsersEditor extends React.Component {
 
         return (
 
-            <div>
+            <div id="users-editor">
 
                 <h1>{this.state.username}'s time-tracker</h1>
 
@@ -53,7 +55,7 @@ class UsersEditor extends React.Component {
 
                 <hr />
 
-                <button onClick={this.onClickButtonDeleteUser}>DELETE USER</button>
+                <button id="button-delete" onClick={this.onClickButtonDeleteUser}>DELETE USER</button>
 
             </div>
 
