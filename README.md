@@ -1,5 +1,5 @@
 # time-tracker
-![time-tracker gif](https://i.imgur.com/DNw4YIS.gif)
+![time-tracker gif](https://i.imgur.com/7FvFzSZ.gif)
 
 # Getting Started
 Get this project set up locally
