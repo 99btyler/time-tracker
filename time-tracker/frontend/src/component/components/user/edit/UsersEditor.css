@@ -8,6 +8,8 @@
 
 #users-editor form input[type="text"] {
     outline: none;
+    width: 30%;
+    text-align: center;
 }
 
 #users-editor form input[type="submit"] {
