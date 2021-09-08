@@ -8,4 +8,4 @@ Get this project set up locally
 * Using terminal, navigate to (repository)/time-tracker and type `npm install`
 * Using a text editor, open (repository)/time-tracker
 ### Running
-* Using terminal, navigate to (repository)/time-tracker and type `npm start`
+* Using terminal, navigate to (repository)/time-tracker/backend and type `npm start`. Then, navigate to (repository)/time-tracker/frontend and type `npm start` again
