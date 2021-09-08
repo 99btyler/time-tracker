@@ -40,22 +40,31 @@ class UsersEditor extends React.Component {
 
             <div id="users-editor">
 
-                <h1>{this.state.username}'s time-tracker</h1>
-
-                <form onSubmit={this.onSubmitForm} autoComplete="off">
-
-                    {usersEditorInputRows}
-                    <button onClick={this.onClickButtonAddRow}>+</button>
-                    
-                    <input type="submit" value="SAVE EDIT" />
-
-                </form>
-
-                <p>success is not the result of doing an extraordinary thing once, but rather the result of doing unremarkable things many times over a long period of time</p>
-
+                <h1>time-tracker for {this.state.username}</h1>
                 <hr />
 
-                <button id="button-delete" onClick={this.onClickButtonDeleteUser}>DELETE USER</button>
+                <div id="container">
+
+                    <form onSubmit={this.onSubmitForm} autoComplete="off">
+
+                        {usersEditorInputRows}
+                        <button onClick={this.onClickButtonAddRow}>+</button>
+                        <br />
+                        <br />
+                        
+                        <input type="submit" value="SAVE EDITS" />
+
+                    </form>
+
+                    <div id="container-footer">
+                    
+                        <p>success is not the result of doing an extraordinary thing once, but the result of doing many unextraordinary things over a long period of time</p>
+                        <br />
+                        <button id="button-delete" onClick={this.onClickButtonDeleteUser}>DELETE USER</button>
+
+                    </div>
+
+                </div>
 
             </div>
 

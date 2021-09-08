@@ -12,14 +12,24 @@ class UsersAdder extends React.Component {
     render() {
         return (
 
-            <form id="users-adder" onSubmit={this.onSubmitForm}>
-                
-                <label htmlFor="username">username: </label>
-                <input type="text" id="username" value={this.state.username} onChange={this.onChangeUsername} autocomplete="off" />
-                
-                <input type="submit" value="ADD" />
+            <div id="users-adder">
 
-            </form>
+                <h1>Add user</h1>
+                <hr />
+
+                <div id="container">
+
+                    <form onSubmit={this.onSubmitForm}>
+
+                        <input type="text" value={this.state.username} onChange={this.onChangeUsername} autoFocus="on" />
+
+                        <input type="submit" value="+" />
+                        
+                    </form>
+
+                </div>
+            
+            </div>
 
         )
     }
@@ -34,7 +44,7 @@ class UsersAdder extends React.Component {
 
         event.preventDefault()
 
-        if (this.state.username.length === 0) {
+        if (this.state.username.length === 0 || this.state.username.length > 36) {
             return
         }
 
