@@ -16,7 +16,7 @@ class UsersEditor extends React.Component {
 
     componentDidMount() {
 
-        axios.get("http://localhost:5000/users/" + this.props.match.params.id).then(response => {
+        axios.get(`http://localhost:5000/users/${this.props.match.params.id}`).then(response => {
 
             this.setState({
                 username: response.data.username,
@@ -144,7 +144,7 @@ class UsersEditor extends React.Component {
             totalTimes: this.state.totalTimes
         }
 
-        axios.post("http://localhost:5000/users/edit/" + this.props.match.params.id, editedUser).then(() => window.location = "/")
+        axios.post(`http://localhost:5000/users/edit/${this.props.match.params.id}`, editedUser).then(() => window.location = "/")
 
     }
 
@@ -154,7 +154,7 @@ class UsersEditor extends React.Component {
             return
         }
 
-        axios.delete("http://localhost:5000/users/delete/" + this.props.match.params.id).then(() => window.location = "/")
+        axios.delete(`http://localhost:5000/users/delete/${this.props.match.params.id}`).then(() => window.location = "/")
 
     }
 
