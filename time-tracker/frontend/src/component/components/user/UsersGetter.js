@@ -16,7 +16,7 @@ class UsersGetter extends React.Component {
 
             const savedUsersLinks = []
             for (var i = 0; i < response.data.length; i++) {
-                savedUsersLinks.push(<Link className="link" key={i} to={"/edit/" + response.data[i]._id}><button>{response.data[i].username}</button></Link>)
+                savedUsersLinks.push(<Link className="link" key={i} to={`/edit/${response.data[i]._id}`}><button>{response.data[i].username}</button></Link>)
             }
 
             this.setState({
@@ -36,7 +36,9 @@ class UsersGetter extends React.Component {
                 <hr />
 
                 <div id="container">
+
                     {this.state.usersLinks}
+                    
                 </div>
 
             </div>
