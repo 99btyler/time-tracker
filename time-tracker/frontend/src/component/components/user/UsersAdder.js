@@ -21,7 +21,7 @@ class UsersAdder extends React.Component {
 
                     <form onSubmit={this.onSubmitForm}>
 
-                        <input type="text" value={this.state.username} onChange={this.onChangeUsername} autoFocus="on" />
+                        <input type="text" placeholder="username" value={this.state.username} onChange={this.onChangeUsername} autoFocus="on" />
 
                         <input type="submit" value="+" />
                         
