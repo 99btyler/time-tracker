@@ -5,7 +5,7 @@ router.get("/", (request, response) => {
     EntriesSchema.find().then(data => response.json(data)).catch(error => response.status(400).json(error));
 });
 
-router.post("/", (request, response) => {
+router.post("/add", (request, response) => {
 
     const NewEntriesSchema = new EntriesSchema(
         {
@@ -19,12 +19,12 @@ router.post("/", (request, response) => {
 
 });
 
-router.put("/:id", (request, response) => {
-    EntriesSchema.findByIdAndUpdate(request.params.id, request.body).then(() => response.json(`id ${request.params.id} updated`)).catch(error => response.status(400).json(error));
+router.put("/edit/:id", (request, response) => {
+    EntriesSchema.findByIdAndUpdate(request.params.id, request.body).then(() => response.send(`id ${request.params.id} updated`)).catch(error => response.status(400).json(error));
 });
 
-router.delete("/:id", (request, response) => {
-    EntriesSchema.findByIdAndDelete(request.params.id).then(() => response.json(`id ${request.params.id} deleted`)).catch(error => response.status(400).json(error));
+router.delete("/remove/:id", (request, response) => {
+    EntriesSchema.findByIdAndDelete(request.params.id).then(() => response.send(`id ${request.params.id} deleted`)).catch(error => response.status(400).json(error));
 });
 
 module.exports = router;

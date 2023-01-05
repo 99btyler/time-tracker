@@ -20,4 +20,4 @@ app.use("/entries", require("./routes/entriesRoutes"));
 app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
 
 // Database
-mongoose.connect(process.env.CONNECTION_STRING, () => console.log("Database connection established!"));
+mongoose.connect(process.env.MONGO_URI, () => console.log("Database connection established!"));
