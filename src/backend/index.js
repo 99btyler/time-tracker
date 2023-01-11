@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -8,6 +9,7 @@ const PORT = process.env.PORT || 8080;
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+app.use(cors());
 
 // Routes
 app.get("/", (request, response) => {
