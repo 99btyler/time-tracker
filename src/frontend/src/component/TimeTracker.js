@@ -26,6 +26,7 @@ class TimeTracker extends React.Component {
             <div>
                 <h1>time-tracker</h1>
                 <List data={this.state.data} onChangeDataItem={this.onChangeDataItem} addDataItem={this.addDataItem} removeDataItem={this.removeDataItem} />
+                <br />
                 <button onClick={this.saveDataItems}>SAVE EDITS</button>
             </div>
         )
