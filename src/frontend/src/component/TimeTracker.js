@@ -12,11 +12,21 @@ class TimeTracker extends React.Component {
     componentDidMount() {
 
         axios.get("http://localhost:8080/entries").then(response => {
-            this.setState(previousState => (
-                {
-                    data: response.data
-                }
-            ))
+
+            if (response.data.length === 0) {
+
+                this.addDataItem();
+
+            } else {
+
+                this.setState(previousState => (
+                    {
+                        data: response.data
+                    }
+                ));
+
+            }
+
         }).catch(error => console.log(error));
 
     }
