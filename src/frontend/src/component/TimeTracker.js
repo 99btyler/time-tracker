@@ -35,7 +35,7 @@ class TimeTracker extends React.Component {
         return(
             <div>
                 <h1>time-tracker</h1>
-                <List data={this.state.data} addDataItem={this.addDataItem} removeDataItem={this.removeDataItem} onChangeDescription={this.onChangeDescription} onChangeStartTime={this.onChangeStartTime} onChangeEndTime={this.onChangeEndTime} />
+                <List data={this.state.data} onChangeDescription={this.onChangeDescription} onChangeStartTime={this.onChangeStartTime} onChangeEndTime={this.onChangeEndTime} addDataItem={this.addDataItem} removeDataItem={this.removeDataItem} />
                 <br />
             </div>
         )
