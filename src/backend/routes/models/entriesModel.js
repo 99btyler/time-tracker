@@ -13,6 +13,10 @@ const EntriesSchema = mongoose.Schema(
         endTime: {
             type: String,
             required: true
+        },
+        timeBetween: {
+            type: String,
+            required: true
         }
     }
 );

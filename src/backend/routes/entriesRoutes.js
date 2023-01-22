@@ -11,7 +11,8 @@ router.post("/add", (request, response) => {
         {
             description: request.body.description,
             startTime: request.body.startTime,
-            endTime: request.body.endTime
+            endTime: request.body.endTime,
+            timeBetween: request.body.timeBetween
         }
     );
 

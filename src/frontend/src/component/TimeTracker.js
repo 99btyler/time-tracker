@@ -35,15 +35,66 @@ class TimeTracker extends React.Component {
         return(
             <div>
                 <h1>time-tracker</h1>
-                <List data={this.state.data} onChangeDataItem={this.onChangeDataItem} addDataItem={this.addDataItem} removeDataItem={this.removeDataItem} />
+                <List data={this.state.data} addDataItem={this.addDataItem} removeDataItem={this.removeDataItem} onChangeDescription={this.onChangeDescription} onChangeStartTime={this.onChangeStartTime} onChangeEndTime={this.onChangeEndTime} />
                 <br />
             </div>
         )
     }
 
+    onChangeDescription = (_id, value) => {
+
+        this.setState(previousState => (
+            {
+                data: previousState.data.map(dataItem => {
+                    if (dataItem._id === _id) {
+                        dataItem.description = value;
+                    }
+                    return dataItem;
+                })
+            }
+        ));
+
+        this.editDataItem(_id);
+         
+    }
+
+    onChangeStartTime = (_id, value) => {
+
+        this.setState(previousState => (
+            {
+                data: previousState.data.map(dataItem => {
+                    if (dataItem._id === _id) {
+                        dataItem.startTime = value;
+                    }
+                    return dataItem;
+                })
+            }
+        ));
+
+        this.editDataItem(_id);
+
+    }
+
+    onChangeEndTime = (_id, value) => {
+
+        this.setState(previousState => (
+            {
+                data: previousState.data.map(dataItem => {
+                    if (dataItem._id === _id) {
+                        dataItem.endTime = value;
+                    }
+                    return dataItem;
+                })
+            }
+        ));
+
+        this.editDataItem(_id);
+
+    }
+
     addDataItem = () => {
 
-        axios.post("http://localhost:8080/entries/add", {description: "description", startTime: "8:00 AM", endTime: "8:33 AM"}).then(response => {
+        axios.post("http://localhost:8080/entries/add", {description: "description", startTime: "8:00 AM", endTime: "8:33 AM", timeBetween: "33 minutes"}).then(response => {
             this.setState(previousState => (
                 {
                     data: [...previousState.data, response.data]
@@ -65,24 +116,14 @@ class TimeTracker extends React.Component {
 
     }
 
-    onChangeDataItem = (_id, value) => {
-
-        console.log(`${_id} ====> ${value}`)
-
-        this.setState(previousState => (
-            {
-                data: previousState.data.map(dataItem => {
-                    if (dataItem._id === _id) {
-                        dataItem.description = value;
-                    }
-                    return dataItem;
-                })
-            }
-        ));
+    editDataItem = (_id) => {
 
         const dataItem = this.state.data.find(dataItem => dataItem._id === _id);
-        axios.put(`http://localhost:8080/entries/edit/${dataItem._id}`, {description: dataItem.description, startTime: dataItem.startTime, endTime: dataItem.endTime}).catch(error => console.log(error));
-         
+
+        if (dataItem) {
+            axios.put(`http://localhost:8080/entries/edit/${dataItem._id}`, {description: dataItem.description, startTime: dataItem.startTime, endTime: dataItem.endTime, minutesBetween: dataItem.minutesBetween}).catch(error => console.log(error));
+        }
+
     }
 
 }
