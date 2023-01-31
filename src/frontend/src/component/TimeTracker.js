@@ -94,7 +94,7 @@ class TimeTracker extends React.Component {
 
     addDataItem = () => {
 
-        axios.post("http://localhost:8080/entries/add", {description: "description", startTime: "8:00 AM", endTime: "8:33 AM", timeBetween: "33 minutes"}).then(response => {
+        axios.post("http://localhost:8080/entries/add", {description: "description", startTime: "8:33 AM", endTime: "9:06 AM"}).then(response => {
             this.setState(previousState => (
                 {
                     data: [...previousState.data, response.data]
@@ -121,7 +121,7 @@ class TimeTracker extends React.Component {
         const dataItem = this.state.data.find(dataItem => dataItem._id === _id);
 
         if (dataItem) {
-            axios.put(`http://localhost:8080/entries/edit/${dataItem._id}`, {description: dataItem.description, startTime: dataItem.startTime, endTime: dataItem.endTime, minutesBetween: dataItem.minutesBetween}).catch(error => console.log(error));
+            axios.put(`http://localhost:8080/entries/edit/${dataItem._id}`, {description: dataItem.description, startTime: dataItem.startTime, endTime: dataItem.endTime}).catch(error => console.log(error));
         }
 
     }
