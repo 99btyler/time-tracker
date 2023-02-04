@@ -2,6 +2,11 @@ body {
     background-color: #202020;
     color: #FFFFFF;
     font-family: sans-serif;
+    margin: 20px;
+}
+
+body hr, p {
+    margin: 20px 0;
 }
 
 body input, button {

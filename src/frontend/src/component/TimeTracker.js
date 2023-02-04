@@ -35,8 +35,9 @@ class TimeTracker extends React.Component {
         return(
             <div>
                 <h1>time-tracker</h1>
+                <hr />
                 <List data={this.state.data} onChangeDescription={this.onChangeDescription} onChangeStartTime={this.onChangeStartTime} onChangeEndTime={this.onChangeEndTime} postDataItem={this.postDataItem} deleteDataItem={this.deleteDataItem} />
-                <br />
+                <p>Success is not the result of doing an extraordinary thing once, but the result of doing many unextraordinary things over a long period of time</p>
             </div>
         )
     }
