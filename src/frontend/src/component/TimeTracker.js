@@ -15,7 +15,7 @@ class TimeTracker extends React.Component {
 
             if (response.data.length === 0) {
 
-                this.addDataItem();
+                this.postDataItem();
 
             } else {
 
@@ -35,7 +35,7 @@ class TimeTracker extends React.Component {
         return(
             <div>
                 <h1>time-tracker</h1>
-                <List data={this.state.data} onChangeDescription={this.onChangeDescription} onChangeStartTime={this.onChangeStartTime} onChangeEndTime={this.onChangeEndTime} addDataItem={this.addDataItem} removeDataItem={this.removeDataItem} />
+                <List data={this.state.data} onChangeDescription={this.onChangeDescription} onChangeStartTime={this.onChangeStartTime} onChangeEndTime={this.onChangeEndTime} postDataItem={this.postDataItem} deleteDataItem={this.deleteDataItem} />
                 <br />
             </div>
         )
@@ -48,7 +48,7 @@ class TimeTracker extends React.Component {
                 data: previousState.data.map(dataItem => {
                     if (dataItem._id === _id) {
                         dataItem.description = value;
-                        this.editDataItem(_id, dataItem);
+                        this.putDataItem(_id, dataItem);
                     }
                     return dataItem;
                 })
@@ -64,7 +64,7 @@ class TimeTracker extends React.Component {
                 data: previousState.data.map(dataItem => {
                     if (dataItem._id === _id) {
                         dataItem.startTime = value;
-                        this.editDataItem(_id, dataItem);
+                        this.putDataItem(_id, dataItem);
                     }
                     return dataItem;
                 })
@@ -80,7 +80,7 @@ class TimeTracker extends React.Component {
                 data: previousState.data.map(dataItem => {
                     if (dataItem._id === _id) {
                         dataItem.endTime = value;
-                        this.editDataItem(_id, dataItem);
+                        this.putDataItem(_id, dataItem);
                     }
                     return dataItem;
                 })
@@ -89,7 +89,7 @@ class TimeTracker extends React.Component {
 
     }
 
-    addDataItem = () => {
+    postDataItem = () => {
 
         axios.post("http://localhost:8080/entries/add", {description: "description", startTime: "8:33 AM", endTime: "9:06 AM"}).then(response => {
             this.setState(previousState => (
@@ -101,7 +101,7 @@ class TimeTracker extends React.Component {
 
     }
 
-    removeDataItem = (_id) => {
+    deleteDataItem = (_id) => {
 
         axios.delete(`http://localhost:8080/entries/remove/${_id}`).then(response => {
             this.setState(previousState => (
@@ -113,7 +113,7 @@ class TimeTracker extends React.Component {
 
     }
 
-    editDataItem = (_id, dataItem) => {
+    putDataItem = (_id, dataItem) => {
 
         axios.put(`http://localhost:8080/entries/edit/${dataItem._id}`, {description: dataItem.description, startTime: dataItem.startTime, endTime: dataItem.endTime}).catch(error => console.log(error));
 

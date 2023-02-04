@@ -3,7 +3,7 @@ import React from "react";
 function ListItemAdder(props) {
     return(
         <div>
-            <button onClick={props.addDataItem}>+</button>
+            <button onClick={props.postDataItem}>+</button>
         </div>
     )
 }
