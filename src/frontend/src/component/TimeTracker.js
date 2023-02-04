@@ -48,13 +48,12 @@ class TimeTracker extends React.Component {
                 data: previousState.data.map(dataItem => {
                     if (dataItem._id === _id) {
                         dataItem.description = value;
+                        this.editDataItem(_id, dataItem);
                     }
                     return dataItem;
                 })
             }
         ));
-
-        this.editDataItem(_id);
          
     }
 
@@ -65,13 +64,12 @@ class TimeTracker extends React.Component {
                 data: previousState.data.map(dataItem => {
                     if (dataItem._id === _id) {
                         dataItem.startTime = value;
+                        this.editDataItem(_id, dataItem);
                     }
                     return dataItem;
                 })
             }
         ));
-
-        this.editDataItem(_id);
 
     }
 
@@ -82,13 +80,12 @@ class TimeTracker extends React.Component {
                 data: previousState.data.map(dataItem => {
                     if (dataItem._id === _id) {
                         dataItem.endTime = value;
+                        this.editDataItem(_id, dataItem);
                     }
                     return dataItem;
                 })
             }
         ));
-
-        this.editDataItem(_id);
 
     }
 
@@ -116,13 +113,9 @@ class TimeTracker extends React.Component {
 
     }
 
-    editDataItem = (_id) => {
+    editDataItem = (_id, dataItem) => {
 
-        const dataItem = this.state.data.find(dataItem => dataItem._id === _id);
-
-        if (dataItem) {
-            axios.put(`http://localhost:8080/entries/edit/${dataItem._id}`, {description: dataItem.description, startTime: dataItem.startTime, endTime: dataItem.endTime}).catch(error => console.log(error));
-        }
+        axios.put(`http://localhost:8080/entries/edit/${dataItem._id}`, {description: dataItem.description, startTime: dataItem.startTime, endTime: dataItem.endTime}).catch(error => console.log(error));
 
     }
 
